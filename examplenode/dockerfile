@@ -1,6 +1,13 @@
-FROM node : 25
-WORKDIR/app
+FROM node:25
+WORKDIR /app
 COPY package*.json app.js ./
 RUN npm install
 EXPOSE 3000
 CMD ["node", "app.js"]
+   
+# docker run -d -p 3000:3000 --name node_app examplenode
+# -d runs the container in the background (detached mode)
+# -p 3000:3000 maps port 3000 on your Mac to port 3000 in the container
+# --name node_app gives the container a name "node_app"
+# examplenode is the image we are running
+
